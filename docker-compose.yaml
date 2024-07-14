@@ -1,0 +1,9 @@
+services:
+  cf-ddns:
+    image: docker.io/neomax7/cf-ddns:latest
+    environment:
+      - TOKEN=PLACE_YOUR_OWN_TOKEN # your TOKEN from Cloudflare Dashboard (require ZONE edit)
+      - ZONE=PLACE_YOUR_OWN_ZONE # your ZONE ID from Cloudflare Dashboard
+      - RECORD=PLACE_YOUR_SUBDOMAIN # Subdomain of your choice , example: test.example.com => example.com = zone , test = subdomain
+    #- TIMEZONE=PLACE_YOUR_TIMEZONE # OPTIONAL: for more accurate cronjob otherwise its UTC
+    #- CRON=* * * * * # OPTIONAL: default is every 5 min, make sure no quote or double quote
