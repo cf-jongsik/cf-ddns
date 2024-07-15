@@ -10,7 +10,27 @@ and let you use Cloudflare as dynamic DNS service.
 
 <p>
 <h1>#INSTALLATION</h1>
-<h3>##OPTION 1 - docker compose</h3>
+<h3>##OPTION 1 - install on VM</h3>
+
+<h6>1. clone the repo<br/></h6>
+
+```bash
+git clone https://github.com/cf-jongsik/cf-ddns.git
+```
+
+<h6>2. install</h6>
+
+```bash
+./install.sh
+```
+
+<h6>uninstall</h6>
+
+```bash
+./uninstall.sh
+```
+
+<h3>##OPTION 2 - docker compose</h3>
 
 <h6>1. Edit the following sample then save as docker-compose.yaml <br/></h6>
 
@@ -37,10 +57,14 @@ docker compose up -d
 </p>
 <br/>
 <p>
-<h3>##OPTION 2 - docker</h3>
+<h3>##OPTION 3 - docker</h3>
 
 ```bash
-docker run -d --rm --env TOKEN=YOUR_TOKEN --env ZONE=YOUR_ZONE_ID --env RECORD=RECORD_OF_CHOICE neomax7/cf-ddns:latest
+docker run -d --rm --env TOKEN=YOUR_TOKEN --env ZONE=YOUR_ZONE_ID --env RECORD=RECORD_OF_CHOICE --env CRON="* * * * *" neomax7/cf-ddns:latest
+```
+OR use env-file
+```bash
+docker run -d --rm --env-file .env neomax7/cf-ddns:latest
 ```
 
 </p>
