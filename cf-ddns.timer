@@ -1,0 +1,8 @@
+[Unit]
+Description=Run on boot
+
+[Timer]
+OnBootSec=0sec
+
+[Install]
+WantedBy=timers.target
